@@ -2,11 +2,16 @@
   (:require [odoyle.rules :as o]
             [components.rules.cards :as c]))
 
+(defn rand-between [a b]
+  (+ a (rand (- b a))))
 
 (defn rand-hsl []
-  {:hue (Math/round(rand 360))
+  {:hue (Math/round (rand 360))
    :saturation (Math/round (rand 100))
-   :lightness (Math/round (rand 100))})
+   :lightness (Math/round (rand 75))})
+
+
+
 
 (def valid-letters ["a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"])
 
@@ -28,7 +33,7 @@
                       :card/selected? false
                       :card/flower (rand-nth valid-letters)})
        (o/insert! ::global ::next-id (+ 1 id)))]
-    
+
     ::pick-flower
     [:what
      [::flower ::pick flower-id]

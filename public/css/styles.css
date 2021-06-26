@@ -1,4 +1,4 @@
-
+/* 
 @font-face {
     font-family: 'blumenregular';
     src: url('/fonts/blumen-webfont.woff2') format('woff2'),
@@ -6,11 +6,11 @@
     font-weight: normal;
     font-style: normal;
 
-}
+} */
 
 .flower{
     font-family: 'blumenregular';
-    font-size: 30vw;
+    font-size: 30vh;
     transition: 1s ease-in;
 }
 
@@ -18,3 +18,9 @@
     opacity: 0;
     pointer-events: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .flower {
+        font-size: 30vw;
+    }
+  }

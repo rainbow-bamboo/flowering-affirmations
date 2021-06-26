@@ -1,0 +1,157 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Connecting ...
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
+; Creating cljs repl session...
+; Connecting cljs repl: shadow-cljs...
+;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs, repl: :app
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+21.349316147196955
+cljs꞉components.rules.events꞉>  ; Use `alt+enter` to evaluate
+304.26237311750475
+cljs꞉components.rules.events꞉> 
+183.9037287951065
+cljs꞉components.rules.events꞉> 
+155.78267537573535
+cljs꞉components.rules.events꞉> 
+211.35774382268585
+cljs꞉components.rules.events꞉> 
+214.0857213914908
+cljs꞉components.rules.events꞉> 
+224.9656763393794
+cljs꞉components.rules.events꞉> 
+351.7334173965487
+cljs꞉components.rules.events꞉> 
+197.91043791483926
+cljs꞉components.rules.events꞉> 
+1.282468509890153
+cljs꞉components.rules.events꞉> 
+1.4030862077906212
+cljs꞉components.rules.events꞉> 
+0.2778213636216651
+cljs꞉components.rules.events꞉> 
+0.5777122511950883
+cljs꞉components.rules.events꞉> 
+1.968967220763917
+cljs꞉components.rules.events꞉> 
+0.7665799074693256
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+2
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+0
+cljs꞉components.rules.events꞉> 
+2
+cljs꞉components.rules.events꞉> 
+1
+cljs꞉components.rules.events꞉> 
+nil
+; ------ REPL Error while processing ---------------------------------------------
+; (def rand-hsl []
+  {:hue (Math/round(rand 360))
+   :saturation (Math/round (rand 100))
+   :lightness (Math/round (rand 100))})
+null
+Too many arguments to def at line 1 components/rules/events.cljs
+cljs꞉components.rules.events꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:2
+ Use of undeclared Var components.rules.events/rand-hsl
+--------------------------------------------------------------------------------
+
+cljs꞉components.rules.events꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:2
+ Use of undeclared Var components.rules.events/rand-hsl
+--------------------------------------------------------------------------------
+
+cljs꞉components.rules.events꞉> 
+#'components.rules.events/rand-hsl
+cljs꞉components.rules.events꞉> 
+{:hue 305, :saturation 90, :lightness 73}
+cljs꞉components.rules.events꞉> 
+{:hue 290, :saturation 92, :lightness 38}
+cljs꞉components.rules.events꞉> 
+{:hue 353, :saturation 11, :lightness 66}
+cljs꞉components.rules.events꞉> 
+{:hue 183, :saturation 93, :lightness 7}
+cljs꞉components.rules.events꞉> 
+[10 20]
+cljs꞉components.rules.cards꞉> 
+[10 20]
+cljs꞉components.rules.cards꞉> 
+[20 10]
+cljs꞉components.rules.cards꞉> 
+#'components.rules.events/valid-letters
+cljs꞉components.rules.events꞉> 
+"e"
+cljs꞉components.rules.events꞉> 
+"l"
+cljs꞉components.rules.events꞉> 
+"m"
+cljs꞉components.rules.events꞉> 
+"i"
+cljs꞉components.rules.events꞉> 
+"e"
+cljs꞉components.rules.events꞉> 
+"h"
+cljs꞉components.rules.events꞉> 
+:repl/print-error!
+; The result object failed to print. It is available via *1 if you want to interact with it.
+; The exception was: 
+; Error: 20 is not ISeqable
+cljs꞉components.rules.events꞉> 
+[10 20]
+cljs꞉components.rules.events꞉> 
+; nREPL Connection was closed

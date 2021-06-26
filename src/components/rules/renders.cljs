@@ -1,7 +1,8 @@
 (ns components.rules.renders
   (:require [odoyle.rules :as o]
             [odoyle.rum :as orum]
-            [components.rules.cards :as c]))
+            [components.rules.cards :as c]
+            [components.rules.events :as e]))
 
 (defn insert! [*session id attr->value]
   (swap! *session
@@ -17,7 +18,7 @@
     (let [*session (orum/prop)]
      [:div#app-root
       [:header
-       [:h1 "Rainbow Affirmations"]
+       [:h1 "You're Flowering"]
        (all-affirmations *session)]])]
     
     all-affirmations
@@ -25,6 +26,11 @@
      [::c/derived ::c/affirmations all-affirmations]
      :then
      (let [*session (orum/prop)]
-       (println all-affirmations)
-       [:ul.affirmations
-        (map (fn [a] [:li (:content a)]) all-affirmations)])]}))
+       [:div.affirmations
+        (map (fn [a] 
+               (let [{:keys [hue saturation lightness]} (:color a)]
+                 [:span.flower
+                  {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}
+                   :class (if (:selected? a) "selected" nil)
+                   :on-click #(insert! *session ::e/flower {::e/pick (:id a)})}
+                  (:flower a)])) all-affirmations)])]}))

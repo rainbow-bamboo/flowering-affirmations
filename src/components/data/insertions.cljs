@@ -7,7 +7,7 @@
          (fn [session]
            (let [{:keys [type content]} prompt]
              (-> session
-                 (o/insert ::ev/insertion {::ev/card {:type type
+                 (o/insert ::ev/card {::ev/insertion {:type type
                                                       :content content}})
                  o/fire-rules)))))
 ; This is the fucntion that allows us to read a collection of facts

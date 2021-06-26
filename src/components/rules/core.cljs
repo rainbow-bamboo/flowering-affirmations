@@ -7,7 +7,8 @@
 (def initial-session
   (-> (reduce o/add-rule (o/->session) (concat r/render-rules c/card-rules ev/event-rules))
       (o/insert ::ev/global {::ev/next-id 0})
-      (o/insert ::c/derived {::c/affirmations []})
+      (o/insert ::c/derived {::c/affirmations []
+                             ::c/selected-affirmations []})
       o/fire-rules))
 
-(def *todo-session (atom initial-session))
+(def *card-session (atom initial-session))

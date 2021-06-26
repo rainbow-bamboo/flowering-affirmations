@@ -8,8 +8,12 @@
   (o/ruleset
    {::affirmations
    [:what
-    [id :prompt/type "affirmation"]
-    [id :prompt/content content]
+    [id :card/type "affirmation"]
+    [id :card/content content]
+    [id :card/color color]
+    [id :card/selected? selected?]
+    [id :card/flower flower]
     :then-finally
     (->> (o/query-all o/*session* ::affirmations)
+         shuffle
          (o/insert! ::derived ::affirmations))]}))

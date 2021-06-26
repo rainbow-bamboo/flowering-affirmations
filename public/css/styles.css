@@ -10,6 +10,7 @@
 
 .flower{
     font-family: 'blumenregular';
+    cursor: pointer;
     font-size: 30vh;
     transition: 1s ease-in;
 }
@@ -17,6 +18,22 @@
 .selected{
     opacity: 0;
     pointer-events: none;
+}
+
+.affirmation-screen{
+    background-color: whitesmoke;
+    transition: 1s ease-in;
+    position: absolute;
+}
+
+.card{
+    position: absolute;
+}
+
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+    /* transform: translateX(-100%);  */
 }
 
 @media only screen and (max-width: 600px) {

@@ -8,6 +8,10 @@
 
 } */
 
+body{
+    background-color: whitesmoke;
+}
+
 .flower{
     font-family: 'blumenregular';
     cursor: pointer;
@@ -20,14 +24,32 @@
     pointer-events: none;
 }
 
-.affirmation-screen{
+.affirmation-screen, .card{
     background-color: whitesmoke;
     transition: 1s ease-in;
     position: absolute;
+    width: 100%;
 }
 
-.card{
-    position: absolute;
+h1{
+    margin-bottom: .25em;
+}
+
+.show-affirmation-button, .hide-affirmation-button{
+    line-height: 1.25em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.card div{
+    text-align: center;
+}
+
+.affirmation{
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Vollkorn';
+    font-weight: bold;
 }
 
 .hidden{
@@ -36,8 +58,16 @@
     /* transform: translateX(-100%);  */
 }
 
+.other-flowers .flower{
+    font-size: 15vh;
+}
+
 @media only screen and (max-width: 600px) {
     .flower {
         font-size: 30vw;
+    }
+
+    .other-flowers .flower{
+        font-size: 15vw;
     }
   }

@@ -26,28 +26,27 @@
      [::c/derived ::c/selected-affirmations selected-affirmations]
      [::e/global ::e/show-affirmation? show?]
      :then
-     (if show?
-       (let [*session (orum/prop)
-             selected-flower (if (seq selected-affirmations) (rand-nth selected-affirmations) nil)
-             other-flowers (filter #(not (= (:content %) (:content selected-flower))) selected-affirmations)]
-         [:div.card
-          [:h2.hide-affirmation-button
-           {:on-click #(insert! *session ::e/global {::e/hide-affirmation true})}
-           "Back to the garden"]
-          
-          (let [{:keys [hue saturation lightness]} (:color selected-flower)]
-            [:span.flower.chosen
-             {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
-             (:flower selected-flower)])
-          [:p.affirmation (:content selected-flower)]
-          [:p.other-flowers
-           (map (fn [f]
-                  (let [{:keys [hue saturation lightness]} (:color f)]
-                    [:span.flower
-                     {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
-                     (:flower f)]))
-                other-flowers)]])
-       nil)]
+     (let [*session (orum/prop)
+           selected-flower (if (seq selected-affirmations) (rand-nth selected-affirmations) nil)
+           other-flowers (filter #(not (= (:content %) (:content selected-flower))) selected-affirmations)]
+       [:div.card
+        {:class (if (not show?) "hidden" nil)}
+        [:h2.hide-affirmation-button
+         {:on-click #(insert! *session ::e/global {::e/hide-affirmation true})}
+         "Back to the garden"]
+
+        (let [{:keys [hue saturation lightness]} (:color selected-flower)]
+          [:div.flower.chosen
+           {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
+           (:flower selected-flower)])
+        [:div.affirmation (:content selected-flower)]
+        [:div.other-flowers
+         (map (fn [f]
+                (let [{:keys [hue saturation lightness]} (:color f)]
+                  [:span.flower
+                   {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
+                   (:flower f)]))
+              other-flowers)]])]
     
     all-affirmations
     [:what

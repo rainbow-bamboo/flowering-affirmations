@@ -47,7 +47,7 @@
                    {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
                    (:flower f)]))
               other-flowers)]
-        (rainbow-homepage *session)])]
+        #_(rainbow-homepage *session)])]
     
     all-affirmations
     [:what

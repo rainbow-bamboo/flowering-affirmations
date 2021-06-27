@@ -46,7 +46,8 @@
                   [:span.flower
                    {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}}
                    (:flower f)]))
-              other-flowers)]])]
+              other-flowers)]
+        (rainbow-homepage *session)])]
     
     all-affirmations
     [:what
@@ -67,7 +68,15 @@
                    {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}
                     :class (if (:selected? a) "selected" nil)
                     :on-click #(insert! *session ::e/flower {::e/pick (:id a)})}
-                   (:flower a)])) all-affirmations)]])]}))
+                   (:flower a)])) all-affirmations)]
+        (rainbow-homepage *session)])]
+    
+    rainbow-homepage
+    [:then
+     (let [*session (orum/prop)]
+       [:a.rainbow-homepage {:href "http://rainbowbamboo.org"}
+        [:img {:src "/img/rainbow-logo.png"
+               :alt "rainbow bamboo homepage"}]])]}))
 
 
 

@@ -66,6 +66,15 @@ h1{
     font-size: 15vh;
 }
 
+.rainbow-homepage{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .rainbow-homepage img{
+    height: 2em;
+  }
+
 @media only screen and (max-width: 600px) {
     .flower {
         font-size: 30vw;

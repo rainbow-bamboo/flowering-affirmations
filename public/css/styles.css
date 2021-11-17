@@ -10,6 +10,7 @@
 
 body{
     background-color: whitesmoke;
+    padding: 1em;
 }
 
 .flower{
@@ -36,10 +37,18 @@ h1{
 }
 
 .show-affirmation-button, .hide-affirmation-button{
+    font-size: 2rem;
     line-height: 1.25em;
     cursor: pointer;
-    text-decoration: underline;
+    border-radius: .5rem;
+    padding: .25em;
 }
+
+.valid-selection{
+    background-color: #fffeaf;
+}
+
+
 .card div{
     text-align: center;
 }

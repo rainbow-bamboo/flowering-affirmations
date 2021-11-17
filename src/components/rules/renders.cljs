@@ -69,7 +69,7 @@
                     :class (if (:selected? a) "selected" nil)
                     :on-click #(insert! *session ::e/flower {::e/pick (:id a)})}
                    (:flower a)])) all-affirmations)]
-        (rainbow-homepage *session)])]
+        #_(rainbow-homepage *session)])]
     
     rainbow-homepage
     [:then

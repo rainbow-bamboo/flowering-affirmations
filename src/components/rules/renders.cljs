@@ -31,7 +31,7 @@
            other-flowers (filter #(not (= (:content %) (:content selected-flower))) selected-affirmations)]
        [:div.card
         {:class (if (not show?) "hidden" nil)}
-        [:h2.hide-affirmation-button
+        [:button.hide-affirmation-button
          {:on-click #(insert! *session ::e/global {::e/hide-affirmation true})}
          "Back to the garden"]
 
@@ -53,14 +53,18 @@
     [:what
      [::c/derived ::c/affirmations all-affirmations]
      [::e/global ::e/show-affirmation? show-affirmation?]
+     [::c/derived ::c/selected-affirmations selected-affirmations]
      :then
-     (let [*session (orum/prop)]
+     (let [*session (orum/prop)
+           valid-selection? (seq selected-affirmations)]
        [:div.affirmation-screen
         {:class (if show-affirmation? "hidden" nil)}
         [:h1 "You're Flowering"]
-        [:h2.show-affirmation-button
-         {:on-click #(insert! *session ::e/global {::e/show-affirmation? true})}
-         "Pick some and then click here to reveal your affirmation"]
+        [:button.show-affirmation-button
+         {:disabled (if valid-selection? false true)
+          :class (if valid-selection? "valid-selection" nil)
+          :on-click #(insert! *session ::e/global {::e/show-affirmation? true})}
+         (if valid-selection? "Reveal your affirmation" "Pick some")]
         [:div.affirmations
          (map (fn [a]
                 (let [{:keys [hue saturation lightness]} (:color a)]

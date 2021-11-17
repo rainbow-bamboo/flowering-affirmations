@@ -16,4 +16,8 @@
     :then-finally
     (->> (o/query-all o/*session* ::affirmations)
          shuffle
-         (o/insert! ::derived ::affirmations))]}))
+         (o/insert! ::derived ::affirmations))]
+    
+    ::active-flower
+    [:what
+     [::derived ::selected-affirmations selected-affirmations]]}))

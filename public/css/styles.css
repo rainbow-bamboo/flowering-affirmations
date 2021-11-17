@@ -11,6 +11,7 @@
 body{
     background-color: whitesmoke;
     padding: 1em;
+    text-align: center;
 }
 
 .flower{
@@ -30,10 +31,18 @@ body{
     transition: 1s ease-in;
     position: absolute;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1{
     margin-bottom: .25em;
+}
+
+.show-affirmation-button{
+    transition: all 1s;
+    width: 20vw;
 }
 
 .show-affirmation-button, .hide-affirmation-button{
@@ -85,6 +94,10 @@ h1{
   }
 
 @media only screen and (max-width: 600px) {
+    body{
+        padding: 0px;
+    }
+
     .flower {
         font-size: 30vw;
     }
@@ -92,4 +105,20 @@ h1{
     .other-flowers .flower{
         font-size: 15vw;
     }
-  }
+
+    .card{
+        padding: 1em 2em 0em 2em;
+    }
+
+    .show-affirmation-button{
+        width: 80vw;
+    }
+
+    .hide-affirmation-button{
+        margin-bottom: 1em;
+    }
+
+    .show-affirmation-button, .hide-affirmation-button{
+        font-size: 1.5rem;
+    }
+}

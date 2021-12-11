@@ -69,7 +69,8 @@
          (map (fn [a]
                 (let [{:keys [hue saturation lightness]} (:color a)]
                   [:span.flower
-                   {:style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}
+                   {:key (str "flower-" (:id a))
+                    :style {:color (str "hsl(" hue "," saturation "%," lightness "%)")}
                     :class (if (:selected? a) "selected" nil)
                     :on-click #(insert! *session ::e/flower {::e/pick (:id a)})}
                    (:flower a)])) all-affirmations)]

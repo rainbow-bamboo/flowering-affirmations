@@ -1,4 +1,4 @@
-/* 
+/*
 @font-face {
     font-family: 'blumenregular';
     src: url('/fonts/blumen-webfont.woff2') format('woff2'),
@@ -90,7 +90,7 @@ h1{
     display: flex;
     justify-content: center;
   }
-  
+
   .rainbow-homepage img{
     height: 2em;
   }
@@ -123,4 +123,46 @@ h1{
     .show-affirmation-button, .hide-affirmation-button{
         font-size: 1.5rem;
     }
+}
+
+/* Rainbow Styles */
+#rainbow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: .5em;
+  border-radius: 100px;
+  background: linear-gradient(230deg, #ffbfc5, #ffffff, #a8d1e7);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+  border:5px solid #deedce;
+  z-index:2;
+}
+
+@media only screen and (max-width: 600px) {
+  #rainbow{
+    padding: 5px;
+  }
+}
+
+#rainbow:hover{
+  border:5px solid #B3DBD8;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:51% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:51% 0%}
 }

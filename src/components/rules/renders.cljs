@@ -18,7 +18,8 @@
     (let [*session (orum/prop)]
      [:div#app-root
       [:header
-       (all-affirmations *session)
+       [:a#rainbow {:href "https://rainbowbamboo.com"} "🌈"]
+       (static-garden *session)
        (selected-affirmation *session)]])]
 
     selected-affirmation
@@ -49,7 +50,7 @@
               other-flowers)]
         #_(rainbow-homepage *session)])]
 
-    all-affirmations
+    static-garden
     [:what
      [::c/derived ::c/affirmations all-affirmations]
      [::e/global ::e/show-affirmation? show-affirmation?]

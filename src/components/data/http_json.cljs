@@ -6,7 +6,7 @@
 
 
 ;; Intention
-;; this interface reads data from an api call, and 
+;; this interface reads data from an api call, and
 ;; then stores it into a rules session.
 
 

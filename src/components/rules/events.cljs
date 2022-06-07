@@ -31,7 +31,7 @@
                       :card/selected? false
                       :card/flower (rand-nth valid-letters)})
        (o/insert! ::global ::next-id (+ 1 id)))]
-    
+
     ::close-affirmation-screen
     [:what
      [::global ::hide-affirmation true]
@@ -48,8 +48,8 @@
      [::c/derived ::c/selected-affirmations selected-affirmations {:then false}]
      :then
      (o/insert! flower-id {:card/selected? true})
-     (o/insert! ::c/derived {::c/selected-affirmations (conj selected-affirmations 
+     (o/insert! ::c/derived {::c/selected-affirmations (conj selected-affirmations
                                                              {:content content
                                                               :flower flower
-                                                              :color color})})]}))
-
+                                                              :color color})})
+     (o/insert! ::global ::show-affirmation? true)]}))

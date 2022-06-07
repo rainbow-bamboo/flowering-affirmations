@@ -20,7 +20,7 @@
       [:header
        (all-affirmations *session)
        (selected-affirmation *session)]])]
-    
+
     selected-affirmation
     [:what
      [::c/derived ::c/selected-affirmations selected-affirmations]
@@ -48,7 +48,7 @@
                    (:flower f)]))
               other-flowers)]
         #_(rainbow-homepage *session)])]
-    
+
     all-affirmations
     [:what
      [::c/derived ::c/affirmations all-affirmations]
@@ -60,7 +60,7 @@
        [:div.affirmation-screen
         {:class (if show-affirmation? "hidden" nil)}
         [:h1 "You're Flowering"]
-        [:button.show-affirmation-button
+        #_[:button.show-affirmation-button
          {:disabled (if valid-selection? false true)
           :class (if valid-selection? "valid-selection" nil)
           :on-click #(insert! *session ::e/global {::e/show-affirmation? true})}
@@ -75,14 +75,10 @@
                     :on-click #(insert! *session ::e/flower {::e/pick (:id a)})}
                    (:flower a)])) all-affirmations)]
         #_(rainbow-homepage *session)])]
-    
+
     rainbow-homepage
     [:then
      (let [*session (orum/prop)]
        [:a.rainbow-homepage {:href "http://rainbowbamboo.org"}
         [:img {:src "/img/rainbow-logo.png"
                :alt "rainbow bamboo homepage"}]])]}))
-
-
-
-

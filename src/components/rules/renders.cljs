@@ -61,7 +61,7 @@
        [:div.affirmation-screen
         {:class (if show-affirmation? "hidden" nil)}
         [:h1 "You're Flowering"]
-        #_[:button.show-affirmation-button
+        [:button.show-affirmation-button
          {:disabled (if valid-selection? false true)
           :class (if valid-selection? "valid-selection" nil)
           :on-click #(insert! *session ::e/global {::e/show-affirmation? true})}

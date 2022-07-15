@@ -51,5 +51,4 @@
      (o/insert! ::c/derived {::c/selected-affirmations (conj selected-affirmations
                                                              {:content content
                                                               :flower flower
-                                                              :color color})})
-     (o/insert! ::global ::show-affirmation? true)]}))
+                                                              :color color})})]}))
